@@ -1,5 +1,6 @@
 package org.kayo.gof;
 
+import org.kayo.gof.facade.Facade;
 import org.kayo.gof.singleton.SingletonEager;
 import org.kayo.gof.singleton.SingletonLazy;
 import org.kayo.gof.singleton.SingletonLazyHolder;
@@ -40,5 +41,11 @@ public class Main {
         Robo robo = new Robo();
         robo.setStrategy(normal);
         robo.mover();
+
+        // Facade Pattern
+
+        Facade facade = new Facade();
+        facade.migrarCliente("João", "12345678");
+
     }
 }
