@@ -1,4 +1,4 @@
-package org.kayo.gof;
+package org.kayo.gof.singleton;
 
 /**
  * Singleton "Lazy Holder"

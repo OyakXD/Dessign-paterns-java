@@ -1,10 +1,15 @@
 package org.kayo.gof;
 
+import org.kayo.gof.singleton.SingletonEager;
+import org.kayo.gof.singleton.SingletonLazy;
+import org.kayo.gof.singleton.SingletonLazyHolder;
+import org.kayo.gof.strategy.*;
+
 public class Main {
     public static void main(String[] args) {
 
-        // Testes relacionados ao Dessign Pattern Singleton
-        
+        // Singleton Pattern
+
         SingletonLazy lazy = SingletonLazy.getInstance();
         System.out.println(lazy);
         lazy = SingletonLazy.getInstance();
@@ -25,5 +30,15 @@ public class Main {
         System.out.println(lazyHolder);
         lazyHolder = SingletonLazyHolder.getInstance();
         System.out.println(lazyHolder);
+
+        // Strategy Pattern
+
+        Comportamento normal = new ComportamentoNormal();
+        Comportamento defensivo = new ComportamentoDefensivo();
+        Comportamento agressivo = new ComportamentoAgressivo();
+
+        Robo robo = new Robo();
+        robo.setStrategy(normal);
+        robo.mover();
     }
 }
